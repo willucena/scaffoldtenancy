@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{{config('app.name')}}</title>
+    <title>AdminTenancy</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 4.1.1 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
@@ -50,25 +50,25 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-header text-center">
-                    <strong>Account</strong>
+                    <strong>Sua conta</strong>
                 </div>
                 <a class="dropdown-item" href="#">
-                    <i class="fa fa-envelope-o"></i> Messages
-                    <span class="badge badge-success">42</span>
+                    <i class="fa fa-envelope-o"></i> Mensagens
+                    <span class="badge badge-success">3</span>
                 </a>
-                <div class="dropdown-header text-center">
-                    <strong>Settings</strong>
-                </div>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-user"></i> Profile</a>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-wrench"></i> Settings</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-shield"></i> Lock Account</a>
+{{--                <div class="dropdown-header text-center">--}}
+{{--                    <strong>Settings</strong>--}}
+{{--                </div>--}}
+{{--                <a class="dropdown-item" href="#">--}}
+{{--                    <i class="fa fa-user"></i> Profile</a>--}}
+{{--                <a class="dropdown-item" href="#">--}}
+{{--                    <i class="fa fa-wrench"></i> Settings</a>--}}
+{{--                <div class="dropdown-divider"></div>--}}
+{{--                <a class="dropdown-item" href="#">--}}
+{{--                    <i class="fa fa-shield"></i> Lock Account</a>--}}
                 <a href="{{ url('/logout') }}" class="dropdown-item btn btn-default btn-flat"
                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fa fa-lock"></i>Logout
+                    <i class="fa fa-lock"></i>Sair
                 </a>
                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                     @csrf
