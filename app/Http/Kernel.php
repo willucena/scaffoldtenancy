@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\Tenant\CheckDomainMain;
+use App\Http\Middleware\Tenant\NotDomainMain;
 use App\Http\Middleware\Tenant\TenantMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -24,6 +25,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         TenantMiddleware::class
+
     ];
 
     /**
@@ -66,5 +68,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'check.domain.main' => CheckDomainMain::class,
+        'not.domain.main' => NotDomainMain::class
     ];
 }

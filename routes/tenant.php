@@ -8,3 +8,5 @@ Route::get('/', function (){
 
 
 Route::get('company/store', [\App\Http\Controllers\Tenant\CompanyController::class, 'store'])->name('company.store');
+
+Route::resource('companies', \App\Http\Controllers\CompanyController::class);
