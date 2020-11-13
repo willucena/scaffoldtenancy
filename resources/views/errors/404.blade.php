@@ -1,3 +1,5 @@
-<html>
-<h1>Error 404 Company</h1>
-</html>
+@extends('errors::minimal')
+
+@section('title', __('Not Found'))
+@section('code', '404')
+@section('message', __('Not Found'))

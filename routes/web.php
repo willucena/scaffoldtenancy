@@ -8,6 +8,10 @@ Route::get('404', function (){
     return view('errors.404');
 })->name('404.tenant');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('users', \App\Http\Controllers\UserController::class)->middleware('auth');
