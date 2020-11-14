@@ -34,6 +34,9 @@ class TenantMiddleware
         // Só alterna conexão com banco de dados se não for o dominio principal
         if($request->url() != route('404.tenant') && !$managerTenant->domainIsMain()){
             $managerTenant->setConnection($company);
+            $this->setSessionCompany($company->only([
+                'name', 'uuid'
+            ]));
         }
 
         return $next($request);
@@ -47,5 +50,10 @@ class TenantMiddleware
     public function getCompany($host)
     {
         return Company::where('domain', $host)->first();
+    }
+
+    public function setSessionCompany($comapny)
+    {
+        session()->put('company', $comapny);
     }
 }

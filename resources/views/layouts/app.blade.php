@@ -6,7 +6,7 @@
         <title>AdminTenancy</title>
     @enddomainmain
     @tenant
-    <title>Empresa</title>
+    <title>{{ session('company')['name'] ?? 'Eapresa' }}</title>
     @endtenant
 
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>

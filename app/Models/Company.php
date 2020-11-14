@@ -5,6 +5,7 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Webpatser\Uuid\Uuid;
 
 /**
  * Class Company
@@ -17,9 +18,7 @@ class Company extends Model
     use HasFactory;
 
 
-    public $fillable = [ 'name','domain','bd_database','bd_username', 'bd_hostname', 'bd_password'];
-
-
+    public $fillable = [ 'name','uuid','domain','bd_database','bd_username', 'bd_hostname', 'bd_password'];
 
 
     /**
@@ -39,6 +38,17 @@ class Company extends Model
     public static $rules = [
         
     ];
+
+    /**
+     *  Setup model event hooks
+     */
+    public static function boot()
+    {
+        parent::boot();
+        self::creating(function ($model) {
+            $model->uuid = (string) Uuid::generate(4);
+        });
+    }
 
     
 }

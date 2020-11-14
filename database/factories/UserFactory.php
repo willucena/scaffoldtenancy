@@ -24,7 +24,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => 'Administrador',
-            'email' => 'administrador@linkcode.com.br',
+            'email' => 'admin@linkcode.com.br',
             'email_verified_at' => now(),
             'password' => bcrypt(123456),
             'remember_token' => Str::random(10),

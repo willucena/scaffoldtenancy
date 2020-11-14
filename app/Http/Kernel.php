@@ -4,6 +4,7 @@ namespace App\Http;
 
 use App\Http\Middleware\Tenant\CheckDomainMain;
 use App\Http\Middleware\Tenant\NotDomainMain;
+use App\Http\Middleware\Tenant\TenantFilesystems;
 use App\Http\Middleware\Tenant\TenantMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -24,7 +25,8 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        TenantMiddleware::class
+        TenantMiddleware::class,
+        TenantFilesystems::class
 
     ];
 
